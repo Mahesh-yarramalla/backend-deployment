@@ -1,0 +1,17 @@
+{
+  "name": "eb-node-backend",
+  "version": "1.0.0",
+  "description": "Simple Express API for Elastic Beanstalk",
+  "main": "app.js",
+  "engines": {
+    "node": "18.x",
+    "npm": "9.x"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "pg": "^8.11.0"
+  }
+}
