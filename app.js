@@ -3,6 +3,7 @@ const app = express();
 app.use(express.json());
 
 const PORT = process.env.PORT || 3000;
+const HOST = '0.0.0.0'; // <-- Listen on all interfaces
 
 // simple in-memory items
 let items = [{ id: 1, text: 'hello world' }];
@@ -37,6 +38,7 @@ if (process.env.PGHOST) {
   });
 }
 
-app.listen(PORT,'0.0.0.0', () => {
-  console.log(`Server listening on port ${PORT}`);
+// Listen on HOST 0.0.0.0 so EC2 public IP can access
+app.listen(PORT, HOST, () => {
+  console.log(`Server listening on http://${HOST}:${PORT}`);
 });
